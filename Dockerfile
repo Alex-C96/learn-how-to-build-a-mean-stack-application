@@ -8,7 +8,6 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install -g @angular/cli@v6-lts
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
@@ -18,4 +17,4 @@ COPY . .
 
 EXPOSE 3000
 # Command used to start application
-CMD ng serve --host 0.0.0.0
+CMD [ "node", "server/server.js" ]
